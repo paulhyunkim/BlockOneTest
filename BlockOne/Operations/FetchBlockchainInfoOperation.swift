@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BlockchainInfoFetchOperation: AsynchronousOperation {
+class FetchBlockchainInfoOperation: AsynchronousOperation {
     
     var blockchainInfo: BlockchainInfo?
     var error: Error?
