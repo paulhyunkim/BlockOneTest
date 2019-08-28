@@ -24,7 +24,7 @@ struct BlocksListViewModel {
         return blocks.count
     }
     
-    func cellViewModel(for block: Block) -> BlockCellViewModel? {
+    func cellViewModel(forRow rowIndex: Int) -> BlockCellViewModel? {
         return nil
     }
 

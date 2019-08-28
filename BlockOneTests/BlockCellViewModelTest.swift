@@ -11,24 +11,27 @@ import XCTest
 
 class BlockCellViewModelTest: XCTestCase {
     
+    var block: Block!
     var viewModel: BlockCellViewModel!
     
     override func setUp() {
         super.setUp()
-        let block = Block(id: "048d149364b2589f3d59ffd6b293aaf9d59bc1d16c23cb0da48ee18e370d19de",
-                          previousBlockID: "048d1492d52780dedde46fc9eadd976dcf4b8a71c3888371344cad9dc1a845a8",
-                          producer: "certikeosorg",
-                          producerSignature: "SIG_K1_KY3dZBpVJfRY62ytY8fq1vQ2tHNDkGK1uHwDV8gbqNSBPpL7h1D9kJES4AGPn3vhjEzwtF6pb3njdewGvQw3iPk7wCZQpq")
+        block = Block(id: "048d149364b2589f3d59ffd6b293aaf9d59bc1d16c23cb0da48ee18e370d19de",
+                      previousBlockID: "048d1492d52780dedde46fc9eadd976dcf4b8a71c3888371344cad9dc1a845a8",
+                      producer: "certikeosorg",
+                      producerSignature: "SIG_K1_KY3dZBpVJfRY62ytY8fq1vQ2tHNDkGK1uHwDV8gbqNSBPpL7h1D9kJES4AGPn3vhjEzwtF6pb3njdewGvQw3iPk7wCZQpq")
         viewModel = BlockCellViewModel(block: block)
     }
     
     override func tearDown() {
+        block = nil
         viewModel = nil
         super.tearDown()
     }
     
     func testTextForMainLabel() {
-        XCTAssertEqual(viewModel.textForMainLabel, "048d149364b2589f3d59ffd6b293aaf9d59bc1d16c23cb0da48ee18e370d19de")
+        XCTAssertEqual(viewModel.textForMainLabel, block.id,
+                       "Expected text to be the block id")
     }
     
 }

@@ -9,7 +9,11 @@
 import UIKit
 
 class BlockCell: UITableViewCell {
+    
+    private var viewModel: BlockCellViewModel?
 
+    @IBOutlet weak var mainLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +23,12 @@ class BlockCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateContent() {
+        DispatchQueue.main.async {
+            self.mainLabel.text = self.viewModel?.textForMainLabel
+        }
     }
 
 }

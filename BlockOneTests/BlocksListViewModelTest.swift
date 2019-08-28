@@ -29,6 +29,7 @@ class BlocksListViewModelTest: XCTestCase {
     }
     
     override func tearDown() {
+        blocks = nil
         viewModel = nil
         super.tearDown()
     }
@@ -38,16 +39,18 @@ class BlocksListViewModelTest: XCTestCase {
     }
     
     
-    func testCellViewModelForBlock() {
-        guard let lastBlock = blocks.last else {
+    func testCellViewModelForIndex() {
+        guard blocks.count > 0 else {
             XCTFail("Expected some mock data")
             return
         }
-        let lastBlockCellViewModel = viewModel.cellViewModel(for: lastBlock)
-        XCTAssertNotNil(lastBlockCellViewModel)
+        let lastBlockIndex = blocks.count - 1
+        XCTAssertNotNil(viewModel.cellViewModel(forRow: lastBlockIndex),
+                        "Expected a view model when index is in range.")
         
-        let noMatchBlock = Block(id: "incorrect id", previousBlockID: "", producer: "", producerSignature: "")
-        XCTAssertNil(viewModel.cellViewModel(for: noMatchBlock))
+        let outOfRangeIndex = -1
+        XCTAssertNil(viewModel.cellViewModel(forRow: outOfRangeIndex),
+                     "Did not expect a view model when index is out of range.")
     }
 
 }
