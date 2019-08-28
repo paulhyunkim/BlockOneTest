@@ -15,7 +15,7 @@ class BlocksProviderTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let apiClient = APIClient(urlSession: URLSession.shared)
+        let apiClient = MockAPIClient()
         blocksProvider = BlocksProvider(apiClient: apiClient)
     }
     
@@ -25,7 +25,13 @@ class BlocksProviderTest: XCTestCase {
     }
     
     func testFetchMostRecentBlocks() {
-        XCTFail()
+        let blockCount = 5
+        let expectation = self.expectation(description: "Status code: 200")
+        blocksProvider.fetchMostRecentBlocks(count: 5) { blocks in
+            XCTAssertEqual(blockCount, blocks.count)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5)
     }
     
 }
