@@ -10,11 +10,17 @@ import Foundation
 
 class APIClient: APIClientProtocol {
     
-    func fetchBlockchainInfo(_ completion: @escaping (APIResponse<BlockchainInfoProtocol>) -> Void) {
-       
+    private let urlSession: URLSession
+    
+    init(urlSession: URLSession) {
+        self.urlSession = urlSession
     }
     
-    func fetchBlock(id: String, _ completion: @escaping (APIResponse<BlockProtocol>) -> Void) {
+    func fetchBlockchainInfo(_ completion: @escaping (APIResponse<BlockchainInfo>) -> Void) {
+        
+    }
+    
+    func fetchBlock(id: String, _ completion: @escaping (APIResponse<Block>) -> Void) {
         
     }
     

@@ -15,7 +15,8 @@ class APIClientTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        apiClient = APIClient()
+        // Note: need to replace with mock session
+        apiClient = APIClient(urlSession: URLSession.shared)
     }
     
     override func tearDown() {
@@ -23,12 +24,33 @@ class APIClientTest: XCTestCase {
         super.tearDown()
     }
     
-    func testFetchBlockchainInfo() {
-        XCTFail()
+    func testFetchBlockchainInfoSuccess() {
+        let expectation = self.expectation(description: "Status code: 200")
+        apiClient.fetchBlockchainInfo { response in
+            switch response {
+            case .success:
+                expectation.fulfill()
+            case .failure:
+                XCTFail("Expected successful blockchainInfo fetch")
+                expectation.fulfill()
+            }
+        }
+        wait(for: [expectation], timeout: 5)
     }
     
-    func testFetchBlock() {
-        XCTFail()
+    func testFetchBlockSuccess() {
+        let blockID = "048013e1a30e82641fd1f6413eb1af0d1b72274e81564f7ef85c4b29d9d3271d"
+        let expectation = self.expectation(description: "Status code: 200")
+        apiClient.fetchBlock(id: blockID) { response in
+            switch response {
+            case .success:
+                expectation.fulfill()
+            case .failure:
+                XCTFail("Expected successful block fetch")
+                expectation.fulfill()
+            }
+        }
+        wait(for: [expectation], timeout: 5)
     }
     
 }

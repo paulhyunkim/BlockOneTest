@@ -10,8 +10,8 @@ import Foundation
 
 protocol APIClientProtocol {
     
-    func fetchBlockchainInfo(_ completion: @escaping (APIResponse<BlockchainInfoProtocol>) -> Void)
-    func fetchBlock(id: String, _ completion: @escaping (APIResponse<BlockProtocol>) -> Void)
+    func fetchBlockchainInfo(_ completion: @escaping (APIResponse<BlockchainInfo>) -> Void)
+    func fetchBlock(id: String, _ completion: @escaping (APIResponse<Block>) -> Void)
     
 }
 
