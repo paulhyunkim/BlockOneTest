@@ -32,6 +32,7 @@
 		69457F8B231676A2009C8F27 /* BlockDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8A231676A2009C8F27 /* BlockDetailViewModel.swift */; };
 		69457F8D23167946009C8F27 /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8C23167946009C8F27 /* BlockCell.swift */; };
 		69457F8F23167958009C8F27 /* BlockCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8E23167958009C8F27 /* BlockCellViewModel.swift */; };
+		69457F9123167FCF009C8F27 /* BlockCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F9023167FCF009C8F27 /* BlockCellViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		69457F8A231676A2009C8F27 /* BlockDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailViewModel.swift; sourceTree = "<group>"; };
 		69457F8C23167946009C8F27 /* BlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
 		69457F8E23167958009C8F27 /* BlockCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCellViewModel.swift; sourceTree = "<group>"; };
+		69457F9023167FCF009C8F27 /* BlockCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCellViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				69457F6323166138009C8F27 /* APIClientTest.swift */,
 				69457F7623166AAE009C8F27 /* BlocksProviderTest.swift */,
 				69457F7823166BF1009C8F27 /* MockAPIClient.swift */,
+				69457F9023167FCF009C8F27 /* BlockCellViewModelTest.swift */,
 			);
 			path = BlockOneTests;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			files = (
 				69457F7723166AAE009C8F27 /* BlocksProviderTest.swift in Sources */,
 				69457F6423166138009C8F27 /* APIClientTest.swift in Sources */,
+				69457F9123167FCF009C8F27 /* BlockCellViewModelTest.swift in Sources */,
 				69457F7923166BF1009C8F27 /* MockAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

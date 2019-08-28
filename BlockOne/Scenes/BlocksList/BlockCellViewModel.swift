@@ -10,5 +10,14 @@ import Foundation
 
 struct BlockCellViewModel {
     
+    private let block: Block
+    
+    init(block: Block) {
+        self.block = block
+    }
+    
+    var textForMainLabel: String {
+        return ""
+    }
     
 }
