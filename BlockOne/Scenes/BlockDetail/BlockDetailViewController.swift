@@ -11,7 +11,14 @@ import UIKit
 class BlockDetailViewController: UIViewController {
     
     private var viewModel: BlockDetailViewModel?
-
+    
+    @IBOutlet weak var prettyView: UIView!
+    @IBOutlet weak var rawView: UIView!
+    @IBOutlet weak var producerLabel: UILabel!
+    @IBOutlet weak var transactionCountLabel: UILabel!
+    @IBOutlet weak var signatureLabel: UILabel!
+    @IBOutlet weak var toggleViewStateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -20,5 +27,7 @@ class BlockDetailViewController: UIViewController {
         self.viewModel = viewModel
     }
 
+    @IBAction func didTapToggleViewStateButton(_ sender: Any) {
+    }
     
 }
