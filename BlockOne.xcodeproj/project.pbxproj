@@ -23,6 +23,7 @@
 		69457F6C23166959009C8F27 /* BlocksProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F6B23166959009C8F27 /* BlocksProvider.swift */; };
 		69457F7523166A40009C8F27 /* BlocksProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7423166A40009C8F27 /* BlocksProviderProtocol.swift */; };
 		69457F7723166AAE009C8F27 /* BlocksProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7623166AAE009C8F27 /* BlocksProviderTest.swift */; };
+		69457F7923166BF1009C8F27 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7823166BF1009C8F27 /* MockAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		69457F6B23166959009C8F27 /* BlocksProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksProvider.swift; sourceTree = "<group>"; };
 		69457F7423166A40009C8F27 /* BlocksProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksProviderProtocol.swift; sourceTree = "<group>"; };
 		69457F7623166AAE009C8F27 /* BlocksProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksProviderTest.swift; sourceTree = "<group>"; };
+		69457F7823166BF1009C8F27 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				69457F4323165F14009C8F27 /* Info.plist */,
 				69457F6323166138009C8F27 /* APIClientTest.swift */,
 				69457F7623166AAE009C8F27 /* BlocksProviderTest.swift */,
+				69457F7823166BF1009C8F27 /* MockAPIClient.swift */,
 			);
 			path = BlockOneTests;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			files = (
 				69457F7723166AAE009C8F27 /* BlocksProviderTest.swift in Sources */,
 				69457F6423166138009C8F27 /* APIClientTest.swift in Sources */,
+				69457F7923166BF1009C8F27 /* MockAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,4 +16,8 @@ struct BlockchainInfo: BlockchainInfoProtocol, Decodable {
         case headBlockID = "head_block_id"
     }
     
+    init(headBlockID: String) {
+        self.headBlockID = headBlockID
+    }
+    
 }

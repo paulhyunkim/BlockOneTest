@@ -22,4 +22,11 @@ struct Block: BlockProtocol, Decodable {
         case id
     }
     
+    init(id: String, previousBlockID: String, producer: String, producerSignature: String) {
+        self.id = id
+        self.previousBlockID = previousBlockID
+        self.producer = producer
+        self.producerSignature = producerSignature
+    }
+    
 }
