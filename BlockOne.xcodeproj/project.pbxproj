@@ -25,6 +25,8 @@
 		69457F7723166AAE009C8F27 /* BlocksProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7623166AAE009C8F27 /* BlocksProviderTest.swift */; };
 		69457F7923166BF1009C8F27 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7823166BF1009C8F27 /* MockAPIClient.swift */; };
 		69457F7C23166E76009C8F27 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7B23166E76009C8F27 /* AsynchronousOperation.swift */; };
+		69457F7E23166F68009C8F27 /* FetchBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7D23166F68009C8F27 /* FetchBlockOperation.swift */; };
+		69457F8023166FCC009C8F27 /* FetchBlockchainInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7F23166FCC009C8F27 /* FetchBlockchainInfoOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		69457F7623166AAE009C8F27 /* BlocksProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksProviderTest.swift; sourceTree = "<group>"; };
 		69457F7823166BF1009C8F27 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
 		69457F7B23166E76009C8F27 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
+		69457F7D23166F68009C8F27 /* FetchBlockOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBlockOperation.swift; sourceTree = "<group>"; };
+		69457F7F23166FCC009C8F27 /* FetchBlockchainInfoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBlockchainInfoOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				69457F7B23166E76009C8F27 /* AsynchronousOperation.swift */,
+				69457F7D23166F68009C8F27 /* FetchBlockOperation.swift */,
+				69457F7F23166FCC009C8F27 /* FetchBlockchainInfoOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -324,9 +330,11 @@
 				69457F6023166015009C8F27 /* BlockProtocol.swift in Sources */,
 				69457F6923166240009C8F27 /* BlockchainInfo.swift in Sources */,
 				69457F6C23166959009C8F27 /* BlocksProvider.swift in Sources */,
+				69457F8023166FCC009C8F27 /* FetchBlockchainInfoOperation.swift in Sources */,
 				69457F6723166219009C8F27 /* Block.swift in Sources */,
 				69457F2F23165F12009C8F27 /* ViewController.swift in Sources */,
 				69457F2D23165F12009C8F27 /* AppDelegate.swift in Sources */,
+				69457F7E23166F68009C8F27 /* FetchBlockOperation.swift in Sources */,
 				69457F5C23165FD1009C8F27 /* APIClientProtocol.swift in Sources */,
 				69457F5E2316600C009C8F27 /* BlockchainInfoProtocol.swift in Sources */,
 				69457F7523166A40009C8F27 /* BlocksProviderProtocol.swift in Sources */,
