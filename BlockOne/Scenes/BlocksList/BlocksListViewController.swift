@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EosioSwift
 
 class BlocksListViewController: UIViewController {
 
@@ -14,7 +15,7 @@ class BlocksListViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    private let blocksProvider = BlocksProvider(apiClient: APIClient(urlSession: URLSession.shared))
+    private let blocksProvider = BlocksProvider()
     private var viewModel: BlocksListViewModel?
     
     override func viewDidLoad() {

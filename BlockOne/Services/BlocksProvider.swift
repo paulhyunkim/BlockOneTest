@@ -7,20 +7,22 @@
 //
 
 import Foundation
+import EosioSwift
 
 class BlocksProvider: BlocksProviderProtocol {
     
     private let operationQueue = OperationQueue()
-    private let apiClient: APIClientProtocol
-    private var blocks: [Block]
+    private var blocks: [EosioRpcBlockResponse]
+    private let rpcProvider: EosioRpcProvider
     
-    init(apiClient: APIClientProtocol) {
-        self.apiClient = apiClient
+    init() {
+        let baseURL = URL(string: "https://api.eosnewyork.io/")!
+        self.rpcProvider = EosioRpcProvider(endpoint: baseURL)
         self.blocks = []
         operationQueue.maxConcurrentOperationCount = 1
     }
     
-    func fetchMostRecentBlocks(count: Int, _ completion: @escaping ([Block]) -> Void) {
+    func fetchMostRecentBlocks(count: Int, _ completion: @escaping ([EosioRpcBlockResponse]) -> Void) {
         blocks = []
         
         guard count > 0 else {
@@ -28,7 +30,7 @@ class BlocksProvider: BlocksProviderProtocol {
             return
         }
         
-        let fetchBlockchainInfoOperation = FetchBlockchainInfoOperation(apiClient: apiClient)
+        let fetchBlockchainInfoOperation = FetchBlockchainInfoOperation(rpcProvider: rpcProvider)
         let fetchBlockOperations = serializedFetchBlockOperations(count: count)
         
         guard let firstFetchBlockOperation = fetchBlockOperations.first else {
@@ -38,7 +40,7 @@ class BlocksProvider: BlocksProviderProtocol {
         firstFetchBlockOperation.addDependency(fetchBlockchainInfoOperation)
         
         fetchBlockchainInfoOperation.completionBlock = { [weak fetchBlockchainInfoOperation, weak firstFetchBlockOperation] in
-            firstFetchBlockOperation?.blockID = fetchBlockchainInfoOperation?.blockchainInfo?.headBlockID
+            firstFetchBlockOperation?.blockNum = fetchBlockchainInfoOperation?.blockchainInfo?.headBlockNum.value
         }
         
         let fetchOperations = [fetchBlockchainInfoOperation] + fetchBlockOperations
@@ -51,13 +53,18 @@ class BlocksProvider: BlocksProviderProtocol {
         var operations = [FetchBlockOperation]()
         
         for _ in 1...count {
-            let operationToAdd = FetchBlockOperation(apiClient: apiClient)
+            let operationToAdd = FetchBlockOperation(rpcProvider: rpcProvider)
             
             /* nextOperation means the operation that should be executed after operationToAdd */
             if let nextOperation = operations.first {
                 nextOperation.addDependency(operationToAdd)
                 operationToAdd.completionBlock = { [weak nextOperation, weak operationToAdd, weak self] in
-                    nextOperation?.blockID = operationToAdd?.block?.previousBlockID
+                    guard let previousID = operationToAdd?.block?.previous else {
+                        return
+                    }
+                    /* NOTE: Seems to have a problem here because `previous` is a string but `getBlock` on the rpcProvider takes a UInt64 blockNum */
+                    let blockNum = EosioUInt64.string(previousID)
+                    nextOperation?.blockNum = blockNum.value
                     if let block = operationToAdd?.block {
                         self?.blocks.append(block)
                     }
@@ -78,7 +85,7 @@ class BlocksProvider: BlocksProviderProtocol {
         return operations
     }
     
-    private func addCompletionOperation(to operations: [Operation], withCompletion completion: @escaping ([Block]) -> Void) -> [Operation] {
+    private func addCompletionOperation(to operations: [Operation], withCompletion completion: @escaping ([EosioRpcBlockResponse]) -> Void) -> [Operation] {
         guard let lastOperation = operations.last else {
             return []
         }

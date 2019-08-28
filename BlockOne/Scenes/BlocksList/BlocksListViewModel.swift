@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import EosioSwift
 
 struct BlocksListViewModel {
     
-    private let blocks: [Block]
+    private let blocks: [EosioRpcBlockResponse]
     
-    init(blocks: [Block]) {
+    init(blocks: [EosioRpcBlockResponse]) {
         self.blocks = blocks
     }
     
@@ -32,7 +33,7 @@ struct BlocksListViewModel {
         return BlockCellViewModel(block: block)
     }
     
-    func block(forRow rowIndex: Int) -> Block? {
+    func block(forRow rowIndex: Int) -> EosioRpcBlockResponse? {
         guard rowIndex < blocks.count && rowIndex >= 0 else {
             return nil
         }

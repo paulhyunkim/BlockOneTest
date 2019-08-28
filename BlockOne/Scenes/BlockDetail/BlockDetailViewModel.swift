@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import EosioSwift
 
 struct BlockDetailViewModel {
     
-    private let block: Block
+    private let block: EosioRpcBlockResponse
     
-    init(block: Block) {
+    init(block: EosioRpcBlockResponse) {
         self.block = block
     }
     
@@ -21,7 +22,7 @@ struct BlockDetailViewModel {
     }
     
     var textForTransactionsCountLabel: String {
-        return "\(block.transactionsCount)"
+        return "\(block.transactions.count)"
     }
     
     var textForSignatureLabel: String {
@@ -29,7 +30,11 @@ struct BlockDetailViewModel {
     }
     
     var textForRawJSON: String {
-        return block.jsonString ?? ""
+        guard let data = try? JSONSerialization.data(withJSONObject: block._rawResponse as Any, options: .prettyPrinted) else {
+            return ""
+        }
+        return String(data: data, encoding: .utf8) ?? ""
+        
     }
     
     func isRawViewHidden(forViewState viewState: ViewState) -> Bool {

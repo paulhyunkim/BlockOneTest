@@ -7,22 +7,23 @@
 //
 
 import Foundation
+import EosioSwift
 
 class FetchBlockchainInfoOperation: AsynchronousOperation {
     
-    var blockchainInfo: BlockchainInfo?
-    var error: Error?
-    var apiClient: APIClientProtocol
+    var blockchainInfo: EosioRpcInfoResponse?
+    var error: EosioError?
+    var rpcProvider: EosioRpcProvider
     
-    init(apiClient: APIClientProtocol) {
-        self.apiClient = apiClient
+    init(rpcProvider: EosioRpcProvider) {
+        self.rpcProvider = rpcProvider
     }
     
     override func main() {
-        apiClient.fetchBlockchainInfo { [weak self] response in
+        rpcProvider.getInfo { [weak self] (response: EosioResult<EosioRpcInfoResponse, EosioError>) in
             switch response {
-            case .success(let blockchainInfo):
-                self?.blockchainInfo = blockchainInfo
+            case .success(let info):
+                self?.blockchainInfo = info
                 self?.finish()
             case .failure(let error):
                 self?.error = error

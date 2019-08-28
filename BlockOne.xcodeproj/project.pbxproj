@@ -13,13 +13,9 @@
 		69457F3423165F14009C8F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69457F3323165F14009C8F27 /* Assets.xcassets */; };
 		69457F3723165F14009C8F27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69457F3523165F14009C8F27 /* LaunchScreen.storyboard */; };
 		69457F4D23165F14009C8F27 /* BlockOneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F4C23165F14009C8F27 /* BlockOneUITests.swift */; };
-		69457F5C23165FD1009C8F27 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F5B23165FD1009C8F27 /* APIClientProtocol.swift */; };
 		69457F5E2316600C009C8F27 /* BlockchainInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F5D2316600C009C8F27 /* BlockchainInfoProtocol.swift */; };
 		69457F6023166015009C8F27 /* BlockProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F5F23166015009C8F27 /* BlockProtocol.swift */; };
-		69457F62231660D6009C8F27 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F61231660D6009C8F27 /* APIClient.swift */; };
 		69457F6423166138009C8F27 /* APIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F6323166138009C8F27 /* APIClientTest.swift */; };
-		69457F6723166219009C8F27 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F6623166219009C8F27 /* Block.swift */; };
-		69457F6923166240009C8F27 /* BlockchainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F6823166240009C8F27 /* BlockchainInfo.swift */; };
 		69457F6C23166959009C8F27 /* BlocksProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F6B23166959009C8F27 /* BlocksProvider.swift */; };
 		69457F7523166A40009C8F27 /* BlocksProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7423166A40009C8F27 /* BlocksProviderProtocol.swift */; };
 		69457F7723166AAE009C8F27 /* BlocksProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7623166AAE009C8F27 /* BlocksProviderTest.swift */; };
@@ -36,7 +32,6 @@
 		69457F9123167FCF009C8F27 /* BlockCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F9023167FCF009C8F27 /* BlockCellViewModelTest.swift */; };
 		69457F9323168337009C8F27 /* BlocksListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F9223168337009C8F27 /* BlocksListViewModelTest.swift */; };
 		69457F9523169E20009C8F27 /* BlockDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F9423169E20009C8F27 /* BlockDetailViewModelTest.swift */; };
-		69457F972316A50E009C8F27 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F962316A50E009C8F27 /* JSONRepresentable.swift */; };
 		7CBD578B6A20AFAFFC6CBA44 /* Pods_BlockOneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972001654A587B07F925815C /* Pods_BlockOneTests.framework */; };
 		9F15AFC09D7D6CFC9E93B82C /* Pods_BlockOneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90ED1E1C03080611D7F24133 /* Pods_BlockOneUITests.framework */; };
 /* End PBXBuildFile section */
@@ -74,13 +69,9 @@
 		69457F4823165F14009C8F27 /* BlockOneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockOneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69457F4C23165F14009C8F27 /* BlockOneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockOneUITests.swift; sourceTree = "<group>"; };
 		69457F4E23165F14009C8F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69457F5B23165FD1009C8F27 /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
 		69457F5D2316600C009C8F27 /* BlockchainInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockchainInfoProtocol.swift; sourceTree = "<group>"; };
 		69457F5F23166015009C8F27 /* BlockProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockProtocol.swift; sourceTree = "<group>"; };
-		69457F61231660D6009C8F27 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		69457F6323166138009C8F27 /* APIClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTest.swift; sourceTree = "<group>"; };
-		69457F6623166219009C8F27 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
-		69457F6823166240009C8F27 /* BlockchainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockchainInfo.swift; sourceTree = "<group>"; };
 		69457F6B23166959009C8F27 /* BlocksProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksProvider.swift; sourceTree = "<group>"; };
 		69457F7423166A40009C8F27 /* BlocksProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksProviderProtocol.swift; sourceTree = "<group>"; };
 		69457F7623166AAE009C8F27 /* BlocksProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksProviderTest.swift; sourceTree = "<group>"; };
@@ -97,7 +88,6 @@
 		69457F9023167FCF009C8F27 /* BlockCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCellViewModelTest.swift; sourceTree = "<group>"; };
 		69457F9223168337009C8F27 /* BlocksListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksListViewModelTest.swift; sourceTree = "<group>"; };
 		69457F9423169E20009C8F27 /* BlockDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailViewModelTest.swift; sourceTree = "<group>"; };
-		69457F962316A50E009C8F27 /* JSONRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRepresentable.swift; sourceTree = "<group>"; };
 		9010E7E038318EC91F95F027 /* Pods-BlockOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockOne.debug.xcconfig"; path = "Target Support Files/Pods-BlockOne/Pods-BlockOne.debug.xcconfig"; sourceTree = "<group>"; };
 		90ED1E1C03080611D7F24133 /* Pods_BlockOneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockOneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		972001654A587B07F925815C /* Pods_BlockOneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockOneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +151,6 @@
 				69457F8123167330009C8F27 /* Scenes */,
 				69457F7A23166E63009C8F27 /* Operations */,
 				69457F6A2316694A009C8F27 /* Services */,
-				69457F65231661FD009C8F27 /* Models */,
 				69457F5A23165F7F009C8F27 /* Protocols */,
 				69457F2C23165F12009C8F27 /* AppDelegate.swift */,
 				69457F3023165F12009C8F27 /* Main.storyboard */,
@@ -198,28 +187,16 @@
 		69457F5A23165F7F009C8F27 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				69457F5B23165FD1009C8F27 /* APIClientProtocol.swift */,
 				69457F5D2316600C009C8F27 /* BlockchainInfoProtocol.swift */,
 				69457F5F23166015009C8F27 /* BlockProtocol.swift */,
 				69457F7423166A40009C8F27 /* BlocksProviderProtocol.swift */,
-				69457F962316A50E009C8F27 /* JSONRepresentable.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		69457F65231661FD009C8F27 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				69457F6623166219009C8F27 /* Block.swift */,
-				69457F6823166240009C8F27 /* BlockchainInfo.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		69457F6A2316694A009C8F27 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				69457F61231660D6009C8F27 /* APIClient.swift */,
 				69457F6B23166959009C8F27 /* BlocksProvider.swift */,
 			);
 			path = Services;
@@ -274,7 +251,6 @@
 				BDFEFCEDFC5E689F08A8861D /* Pods-BlockOneUITests.debug.xcconfig */,
 				5DB0BDD7A8F88871F9B62172 /* Pods-BlockOneUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -532,20 +508,15 @@
 				69457F6023166015009C8F27 /* BlockProtocol.swift in Sources */,
 				69457F8F23167958009C8F27 /* BlockCellViewModel.swift in Sources */,
 				69457F8D23167946009C8F27 /* BlockCell.swift in Sources */,
-				69457F6923166240009C8F27 /* BlockchainInfo.swift in Sources */,
 				69457F6C23166959009C8F27 /* BlocksProvider.swift in Sources */,
 				69457F8923167696009C8F27 /* BlocksListViewModel.swift in Sources */,
 				69457F8023166FCC009C8F27 /* FetchBlockchainInfoOperation.swift in Sources */,
-				69457F6723166219009C8F27 /* Block.swift in Sources */,
 				69457F2D23165F12009C8F27 /* AppDelegate.swift in Sources */,
 				69457F7E23166F68009C8F27 /* FetchBlockOperation.swift in Sources */,
-				69457F5C23165FD1009C8F27 /* APIClientProtocol.swift in Sources */,
 				69457F5E2316600C009C8F27 /* BlockchainInfoProtocol.swift in Sources */,
 				69457F7523166A40009C8F27 /* BlocksProviderProtocol.swift in Sources */,
-				69457F62231660D6009C8F27 /* APIClient.swift in Sources */,
 				69457F7C23166E76009C8F27 /* AsynchronousOperation.swift in Sources */,
 				69457F8723167401009C8F27 /* BlockDetailViewController.swift in Sources */,
-				69457F972316A50E009C8F27 /* JSONRepresentable.swift in Sources */,
 				69457F8B231676A2009C8F27 /* BlockDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

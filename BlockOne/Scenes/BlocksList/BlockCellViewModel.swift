@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import EosioSwift
 
 struct BlockCellViewModel {
     
-    private let block: Block
+    private let block: EosioRpcBlockResponse
     
-    init(block: Block) {
+    init(block: EosioRpcBlockResponse) {
         self.block = block
     }
     

@@ -7,25 +7,28 @@
 //
 
 import Foundation
+import EosioSwift
 
 class FetchBlockOperation: AsynchronousOperation {
     
-    var blockID: String?
-    var block: Block?
-    var error: Error?
-    var apiClient: APIClientProtocol
-
-    init(apiClient: APIClientProtocol) {
-        self.apiClient = apiClient
+    var blockNum: UInt64?
+    var block: EosioRpcBlockResponse?
+    var error: EosioError?
+    var rpcProvider: EosioRpcProvider
+    
+    init(rpcProvider: EosioRpcProvider) {
+        self.rpcProvider = rpcProvider
     }
     
     override func main() {
-        guard let blockID = blockID else {
+        guard let blockNum = blockNum else {
             finish()
             return
         }
         
-        apiClient.fetchBlock(id: blockID) { [weak self] response in
+        let blockRequest = EosioRpcBlockRequest(blockNumOrId: blockNum)
+        
+        rpcProvider.getBlock(requestParameters: blockRequest) { [weak self] (response: EosioResult<EosioRpcBlockResponse, EosioError>) in
             switch response {
             case .success(let block):
                 self?.block = block
