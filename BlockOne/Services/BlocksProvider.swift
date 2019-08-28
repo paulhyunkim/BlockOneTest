@@ -17,6 +17,7 @@ class BlocksProvider: BlocksProviderProtocol {
     init(apiClient: APIClientProtocol) {
         self.apiClient = apiClient
         self.blocks = []
+        operationQueue.maxConcurrentOperationCount = 1
     }
     
     func fetchMostRecentBlocks(count: Int, _ completion: @escaping ([Block]) -> Void) {

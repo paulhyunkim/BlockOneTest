@@ -24,6 +24,7 @@
 		69457F7523166A40009C8F27 /* BlocksProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7423166A40009C8F27 /* BlocksProviderProtocol.swift */; };
 		69457F7723166AAE009C8F27 /* BlocksProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7623166AAE009C8F27 /* BlocksProviderTest.swift */; };
 		69457F7923166BF1009C8F27 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7823166BF1009C8F27 /* MockAPIClient.swift */; };
+		69457F7C23166E76009C8F27 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7B23166E76009C8F27 /* AsynchronousOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		69457F7423166A40009C8F27 /* BlocksProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksProviderProtocol.swift; sourceTree = "<group>"; };
 		69457F7623166AAE009C8F27 /* BlocksProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksProviderTest.swift; sourceTree = "<group>"; };
 		69457F7823166BF1009C8F27 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
+		69457F7B23166E76009C8F27 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		69457F2B23165F12009C8F27 /* BlockOne */ = {
 			isa = PBXGroup;
 			children = (
+				69457F7A23166E63009C8F27 /* Operations */,
 				69457F6A2316694A009C8F27 /* Services */,
 				69457F65231661FD009C8F27 /* Models */,
 				69457F5A23165F7F009C8F27 /* Protocols */,
@@ -177,6 +180,14 @@
 				69457F6B23166959009C8F27 /* BlocksProvider.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		69457F7A23166E63009C8F27 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				69457F7B23166E76009C8F27 /* AsynchronousOperation.swift */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +331,7 @@
 				69457F5E2316600C009C8F27 /* BlockchainInfoProtocol.swift in Sources */,
 				69457F7523166A40009C8F27 /* BlocksProviderProtocol.swift in Sources */,
 				69457F62231660D6009C8F27 /* APIClient.swift in Sources */,
+				69457F7C23166E76009C8F27 /* AsynchronousOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
