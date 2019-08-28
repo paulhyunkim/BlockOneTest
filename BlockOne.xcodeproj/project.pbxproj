@@ -28,6 +28,8 @@
 		69457F8023166FCC009C8F27 /* FetchBlockchainInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7F23166FCC009C8F27 /* FetchBlockchainInfoOperation.swift */; };
 		69457F84231673EA009C8F27 /* BlocksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F83231673EA009C8F27 /* BlocksListViewController.swift */; };
 		69457F8723167401009C8F27 /* BlockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8623167401009C8F27 /* BlockDetailViewController.swift */; };
+		69457F8923167696009C8F27 /* BlocksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8823167696009C8F27 /* BlocksListViewModel.swift */; };
+		69457F8B231676A2009C8F27 /* BlockDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8A231676A2009C8F27 /* BlockDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		69457F7F23166FCC009C8F27 /* FetchBlockchainInfoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBlockchainInfoOperation.swift; sourceTree = "<group>"; };
 		69457F83231673EA009C8F27 /* BlocksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksListViewController.swift; sourceTree = "<group>"; };
 		69457F8623167401009C8F27 /* BlockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailViewController.swift; sourceTree = "<group>"; };
+		69457F8823167696009C8F27 /* BlocksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksListViewModel.swift; sourceTree = "<group>"; };
+		69457F8A231676A2009C8F27 /* BlockDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				69457F83231673EA009C8F27 /* BlocksListViewController.swift */,
+				69457F8823167696009C8F27 /* BlocksListViewModel.swift */,
 			);
 			path = BlocksList;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				69457F8623167401009C8F27 /* BlockDetailViewController.swift */,
+				69457F8A231676A2009C8F27 /* BlockDetailViewModel.swift */,
 			);
 			path = BlockDetail;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				69457F6023166015009C8F27 /* BlockProtocol.swift in Sources */,
 				69457F6923166240009C8F27 /* BlockchainInfo.swift in Sources */,
 				69457F6C23166959009C8F27 /* BlocksProvider.swift in Sources */,
+				69457F8923167696009C8F27 /* BlocksListViewModel.swift in Sources */,
 				69457F8023166FCC009C8F27 /* FetchBlockchainInfoOperation.swift in Sources */,
 				69457F6723166219009C8F27 /* Block.swift in Sources */,
 				69457F2D23165F12009C8F27 /* AppDelegate.swift in Sources */,
@@ -368,6 +375,7 @@
 				69457F62231660D6009C8F27 /* APIClient.swift in Sources */,
 				69457F7C23166E76009C8F27 /* AsynchronousOperation.swift in Sources */,
 				69457F8723167401009C8F27 /* BlockDetailViewController.swift in Sources */,
+				69457F8B231676A2009C8F27 /* BlockDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
