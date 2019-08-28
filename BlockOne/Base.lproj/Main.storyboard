@@ -35,16 +35,25 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMV-Hu-IQZ">
+                                                    <rect key="frame" x="20" y="45.5" width="374" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fMV-Hu-IQZ" secondAttribute="trailing" constant="20" id="0ld-ZT-HWq"/>
                                                 <constraint firstAttribute="trailing" secondItem="ksz-v5-rPR" secondAttribute="trailing" constant="20" id="Egn-us-GHB"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fMV-Hu-IQZ" secondAttribute="bottom" constant="20" id="Rai-MB-zu0"/>
                                                 <constraint firstItem="ksz-v5-rPR" firstAttribute="top" secondItem="y1y-vT-oGt" secondAttribute="top" constant="20" id="YWl-7C-6g7"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ksz-v5-rPR" secondAttribute="bottom" constant="20" id="puq-M9-ZrE"/>
+                                                <constraint firstItem="fMV-Hu-IQZ" firstAttribute="leading" secondItem="y1y-vT-oGt" secondAttribute="leading" constant="20" id="aba-pk-ve2"/>
+                                                <constraint firstItem="fMV-Hu-IQZ" firstAttribute="top" secondItem="ksz-v5-rPR" secondAttribute="bottom" constant="5" id="uia-0R-H5L"/>
                                                 <constraint firstItem="ksz-v5-rPR" firstAttribute="leading" secondItem="y1y-vT-oGt" secondAttribute="leading" constant="20" id="yBw-eG-VzN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="mainLabel" destination="ksz-v5-rPR" id="hra-cg-IEA"/>
+                                            <outlet property="blockIDLabel" destination="fMV-Hu-IQZ" id="6Iy-d5-2Vh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

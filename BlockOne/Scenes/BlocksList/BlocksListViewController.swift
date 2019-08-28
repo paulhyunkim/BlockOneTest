@@ -44,9 +44,12 @@ extension BlocksListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let blockCell = tableView.dequeueReusableCell(withIdentifier: "BlockCell") as? BlockCell else {
+        guard let blockCell = tableView.dequeueReusableCell(withIdentifier: "BlockCell") as? BlockCell,
+            let cellViewModel = viewModel?.cellViewModel(forRow: indexPath.row) else {
             return UITableViewCell()
         }
+        blockCell.setViewModel(cellViewModel)
+        blockCell.updateContent()
         return blockCell
     }
     

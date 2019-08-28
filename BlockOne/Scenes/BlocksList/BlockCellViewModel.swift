@@ -16,7 +16,7 @@ struct BlockCellViewModel {
         self.block = block
     }
     
-    var textForMainLabel: String {
+    var textForBlockIDLabel: String {
         return block.id
     }
     

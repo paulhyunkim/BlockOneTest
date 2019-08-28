@@ -29,9 +29,9 @@ class BlockCellViewModelTest: XCTestCase {
         super.tearDown()
     }
     
-    func testTextForMainLabel() {
-        XCTAssertEqual(viewModel.textForMainLabel, block.id,
-                       "Expected text to be the block id")
+    func testTextForBlockIDLabel() {
+        XCTAssertEqual(viewModel.textForBlockIDLabel, block.id,
+                       "Expected text for block id label to be the block's id")
     }
     
 }

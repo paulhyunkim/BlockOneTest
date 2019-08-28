@@ -12,7 +12,7 @@ class BlockCell: UITableViewCell {
     
     private var viewModel: BlockCellViewModel?
 
-    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var blockIDLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,9 +25,13 @@ class BlockCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setViewModel(_ viewModel: BlockCellViewModel) {
+        self.viewModel = viewModel
+    }
+    
     func updateContent() {
         DispatchQueue.main.async {
-            self.mainLabel.text = self.viewModel?.textForMainLabel
+            self.blockIDLabel.text = self.viewModel?.textForBlockIDLabel
         }
     }
 
