@@ -30,6 +30,8 @@
 		69457F8723167401009C8F27 /* BlockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8623167401009C8F27 /* BlockDetailViewController.swift */; };
 		69457F8923167696009C8F27 /* BlocksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8823167696009C8F27 /* BlocksListViewModel.swift */; };
 		69457F8B231676A2009C8F27 /* BlockDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8A231676A2009C8F27 /* BlockDetailViewModel.swift */; };
+		69457F8D23167946009C8F27 /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8C23167946009C8F27 /* BlockCell.swift */; };
+		69457F8F23167958009C8F27 /* BlockCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8E23167958009C8F27 /* BlockCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		69457F8623167401009C8F27 /* BlockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailViewController.swift; sourceTree = "<group>"; };
 		69457F8823167696009C8F27 /* BlocksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksListViewModel.swift; sourceTree = "<group>"; };
 		69457F8A231676A2009C8F27 /* BlockDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailViewModel.swift; sourceTree = "<group>"; };
+		69457F8C23167946009C8F27 /* BlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
+		69457F8E23167958009C8F27 /* BlockCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,8 @@
 			children = (
 				69457F83231673EA009C8F27 /* BlocksListViewController.swift */,
 				69457F8823167696009C8F27 /* BlocksListViewModel.swift */,
+				69457F8C23167946009C8F27 /* BlockCell.swift */,
+				69457F8E23167958009C8F27 /* BlockCellViewModel.swift */,
 			);
 			path = BlocksList;
 			sourceTree = "<group>";
@@ -362,6 +368,8 @@
 			files = (
 				69457F84231673EA009C8F27 /* BlocksListViewController.swift in Sources */,
 				69457F6023166015009C8F27 /* BlockProtocol.swift in Sources */,
+				69457F8F23167958009C8F27 /* BlockCellViewModel.swift in Sources */,
+				69457F8D23167946009C8F27 /* BlockCell.swift in Sources */,
 				69457F6923166240009C8F27 /* BlockchainInfo.swift in Sources */,
 				69457F6C23166959009C8F27 /* BlocksProvider.swift in Sources */,
 				69457F8923167696009C8F27 /* BlocksListViewModel.swift in Sources */,
