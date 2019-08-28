@@ -52,6 +52,7 @@
                                                 <constraint firstItem="ksz-v5-rPR" firstAttribute="leading" secondItem="y1y-vT-oGt" secondAttribute="leading" constant="20" id="yBw-eG-VzN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="BlockCell"/>
                                         <connections>
                                             <outlet property="blockIDLabel" destination="fMV-Hu-IQZ" id="6Iy-d5-2Vh"/>
                                         </connections>
@@ -72,6 +73,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNe-cU-ol3">
                                 <rect key="frame" x="117" y="812" width="180" height="30"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="RefreshButton"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="lG9-UN-BFV"/>
                                 </constraints>
@@ -84,6 +86,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="BlocksListVIew"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mmt-tJ-2sd" secondAttribute="trailing" id="1LI-kV-bjv"/>
                             <constraint firstItem="zTe-gv-SiV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="63A-ou-TLh"/>
@@ -128,6 +131,7 @@
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="RawView"/>
                                 <constraints>
                                     <constraint firstItem="C2C-au-vgu" firstAttribute="top" secondItem="FYg-2L-CFf" secondAttribute="top" constant="10" id="6sW-9w-f8v"/>
                                     <constraint firstItem="C2C-au-vgu" firstAttribute="leading" secondItem="FYg-2L-CFf" secondAttribute="leading" constant="10" id="aYG-gg-6Kc"/>
@@ -226,6 +230,7 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="PrettyView"/>
                                 <constraints>
                                     <constraint firstItem="79t-e1-GV6" firstAttribute="centerY" secondItem="Fl6-vj-ouK" secondAttribute="centerY" id="VJ8-IP-hNr"/>
                                     <constraint firstItem="79t-e1-GV6" firstAttribute="centerX" secondItem="Fl6-vj-ouK" secondAttribute="centerX" id="cu1-MF-lYe"/>
@@ -235,6 +240,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9QB-Zx-CFa">
                                 <rect key="frame" x="117" y="811" width="180" height="30"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ToggleViewStateButton"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="bsT-ip-J9k"/>
                                 </constraints>
@@ -247,6 +253,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="BlockDetailView"/>
                         <constraints>
                             <constraint firstItem="raZ-Fy-roR" firstAttribute="bottom" secondItem="9QB-Zx-CFa" secondAttribute="bottom" constant="21" id="5Bl-aM-r2j"/>
                             <constraint firstItem="9QB-Zx-CFa" firstAttribute="centerX" secondItem="raZ-Fy-roR" secondAttribute="centerX" id="76t-Dt-OOh"/>

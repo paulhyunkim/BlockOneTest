@@ -10,25 +10,57 @@ import XCTest
 
 class BlockOneUITests: XCTestCase {
 
+    var app: XCUIApplication!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.launch()
+    }
+    
+    func testBlockRefreshButton() {
+        let activityIndicator = app.activityIndicators["In progress"].firstMatch
+        
+        tapBlockRefreshButton()
+        XCTAssertTrue(activityIndicator.waitForExistence(timeout: 5))
+    }
+    
+    func testBlockCellTap() {
+        let showRawJsonButton = app.buttons["Show Raw JSON"].firstMatch
+        
+        tapBlockCell()
+        XCTAssertTrue(showRawJsonButton.waitForExistence(timeout: 1))
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testToggleViewStateButtonTap() {
+        let prettyView = app.otherElements["PrettyView"].firstMatch
+        let rawView = app.otherElements["RawView"].firstMatch
+        
+        tapBlockCell()
+        XCTAssertTrue(prettyView.exists)
+        XCTAssertFalse(rawView.exists)
+        
+        tapToggleBlockDetailViewStateButton()
+        XCTAssertFalse(prettyView.exists)
+        XCTAssertTrue(rawView.exists)
     }
-
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    private func tapBlockRefreshButton() {
+        let refreshButton = app.buttons["RefreshButton"].firstMatch
+        XCTAssertTrue(refreshButton.waitForExistence(timeout: 1))
+        refreshButton.tap()
     }
-
+    
+    private func tapBlockCell() {
+        let cell = app.tables.cells.element(matching: .cell, identifier: "BlockCell").firstMatch
+        XCTAssertTrue(cell.waitForExistence(timeout: 10))
+        cell.tap()
+    }
+    
+    private func tapToggleBlockDetailViewStateButton() {
+        let toggleViewStateButton = app.buttons["ToggleViewStateButton"].firstMatch
+        XCTAssertTrue(toggleViewStateButton.waitForExistence(timeout: 1))
+        toggleViewStateButton.tap()
+    }
+    
 }
