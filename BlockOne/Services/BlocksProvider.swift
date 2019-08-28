@@ -20,6 +20,14 @@ class BlocksProvider: BlocksProviderProtocol {
         operationQueue.maxConcurrentOperationCount = 1
     }
     
+    /* Note:
+     Want to make completion type (RecentBlocksResponse) -> Void where,
+     enum RecentBlocksResponse {
+         case success(result: [Block])
+         case failure(error: Error)
+     }
+     so that we can handle errors.
+     */
     func fetchMostRecentBlocks(count: Int, _ completion: @escaping ([Block]) -> Void) {
         blocks = []
         
