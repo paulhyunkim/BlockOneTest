@@ -20,6 +20,10 @@ struct BlocksListViewModel {
         return ""
     }
     
+    var numberOfRows: Int {
+        return blocks.count
+    }
+    
     func cellViewModel(for block: Block) -> BlockCellViewModel? {
         return nil
     }

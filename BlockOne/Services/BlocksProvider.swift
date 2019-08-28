@@ -21,6 +21,8 @@ class BlocksProvider: BlocksProviderProtocol {
     }
     
     func fetchMostRecentBlocks(count: Int, _ completion: @escaping ([Block]) -> Void) {
+        blocks = []
+        
         guard count > 0 else {
             completion([])
             return

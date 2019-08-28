@@ -13,12 +13,42 @@ class BlocksListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var refreshButton: UIButton!
     
+    private let blocksProvider = BlocksProvider(apiClient: APIClient(urlSession: URLSession.shared))
+    private var viewModel: BlocksListViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = BlocksListViewModel(blocks: [])
     }
 
     @IBAction func didTapRefreshButton(_ sender: Any) {
-        
+        blocksProvider.fetchMostRecentBlocks(count: 20) { [weak self] blocks in
+            self?.viewModel = BlocksListViewModel(blocks: blocks)
+            self?.updateContent()
+        }
+    }
+    
+    private func updateContent() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
 }
+
+
+extension BlocksListViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.numberOfRows ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let blockCell = tableView.dequeueReusableCell(withIdentifier: "BlockCell") as? BlockCell else {
+            return UITableViewCell()
+        }
+        return blockCell
+    }
+    
+}
+
