@@ -35,7 +35,8 @@ class BlocksListViewModelTests: XCTestCase {
     }
     
     func testNumberOfRows() {
-        XCTAssertEqual(viewModel.numberOfRows, blocks.count)
+        XCTAssertEqual(viewModel.numberOfRows, blocks.count,
+                       "Expected same number of rows as block count.")
     }
     
     

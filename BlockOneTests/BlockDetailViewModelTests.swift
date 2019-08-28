@@ -52,16 +52,20 @@ class BlockDetailViewModelTests: XCTestCase {
     
     func testIsRawViewHidden() {
         var viewState: BlockDetailViewModel.ViewState = .raw
-        XCTAssertFalse(viewModel.isRawViewHidden(forViewState: viewState))
+        XCTAssertFalse(viewModel.isRawViewHidden(forViewState: viewState),
+                       "Expected raw view to be not hidden when view state is .raw.")
         viewState = .pretty
-        XCTAssertTrue(viewModel.isRawViewHidden(forViewState: viewState))
+        XCTAssertTrue(viewModel.isRawViewHidden(forViewState: viewState),
+                      "Expected raw view to be hidden when view state is .pretty.")
     }
     
     func testIsPrettyViewHidden() {
         var viewState: BlockDetailViewModel.ViewState = .pretty
-        XCTAssertFalse(viewModel.isPrettyViewHidden(forViewState: viewState))
+        XCTAssertFalse(viewModel.isPrettyViewHidden(forViewState: viewState),
+                       "Expected pretty view to be not hidden when view state is .pretty.")
         viewState = .raw
-        XCTAssertTrue(viewModel.isPrettyViewHidden(forViewState: viewState))
+        XCTAssertTrue(viewModel.isPrettyViewHidden(forViewState: viewState),
+                      "Expected pretty view to be hidden when view state is .raw.")
     }
     
     func testTextForToggleButton() {
