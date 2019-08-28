@@ -25,13 +25,23 @@ class BlocksProviderTests: XCTestCase {
     }
     
     func testFetchMostRecentBlocks() {
-        let blockCount = 5
-        let expectation = self.expectation(description: "Status code: 200")
-        blocksProvider.fetchMostRecentBlocks(count: 5) { blocks in
-            XCTAssertEqual(blockCount, blocks.count)
-            expectation.fulfill()
+        let validBlockRequestCount = 5
+        let validCountExpectation = self.expectation(description: "Status code: 200")
+        blocksProvider.fetchMostRecentBlocks(count: validBlockRequestCount) { blocks in
+            XCTAssertEqual(blocks.count, validBlockRequestCount,
+                           "Expected same number of blocks as requested.")
+            validCountExpectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        
+        let invalidBlockRequestCount = -1
+        let negativeCountExpectation = self.expectation(description: "Status code: 200")
+        blocksProvider.fetchMostRecentBlocks(count: invalidBlockRequestCount) { blocks in
+            XCTAssertEqual(blocks.count, 0,
+                           "Expected 0 blocks when requesting a negative number of blocks.")
+            negativeCountExpectation.fulfill()
+        }
+        
+        wait(for: [validCountExpectation, negativeCountExpectation], timeout: 5)
     }
     
 }

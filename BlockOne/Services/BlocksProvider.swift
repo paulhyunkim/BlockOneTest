@@ -32,6 +32,7 @@ class BlocksProvider: BlocksProviderProtocol {
         let fetchBlockOperations = serializedFetchBlockOperations(count: count)
         
         guard let firstFetchBlockOperation = fetchBlockOperations.first else {
+            completion([])
             return
         }
         

@@ -8,12 +8,12 @@
 
 import Foundation
 
+/// An instance of MockURLSession comes with one data task with visibility into its resume state.
+/// Once the task has ran, the session is dirty and you must create a new instance for subsequent tests.
 class MockURLSession: URLSession {
     
-    var nextDataTask: MockURLSessionDataTask!
+    let nextDataTask = MockURLSessionDataTask()
     private(set) var lastURL: URL?
-    
-    var shouldReturnData: Bool = true
     
     override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         lastURL = request.url

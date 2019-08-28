@@ -28,33 +28,29 @@ class APIClientTests: XCTestCase {
     
     func testFetchBlockchainInfo() {
         let expectedRequestURL = URL(string: "https://api.eosnewyork.io/v1/chain/get_info")!
-        let mockDataTask = MockURLSessionDataTask()
-        urlSession.nextDataTask = mockDataTask
         
-        XCTAssertFalse(mockDataTask.resumeWasCalled,
+        XCTAssertFalse(urlSession.nextDataTask.resumeWasCalled,
                        "Expected fetchBlockchainInfo data task to not be resumed before fetchBlockchainInfo is invoked.")
         apiClient.fetchBlockchainInfo { response in
         }
         
         XCTAssertEqual(expectedRequestURL, urlSession.lastURL,
                        "Expected fetchBlockchainInfo request url to be \(expectedRequestURL.absoluteString)")
-        XCTAssertTrue(mockDataTask.resumeWasCalled,
+        XCTAssertTrue(urlSession.nextDataTask.resumeWasCalled,
                       "Expected fetchBlockchainInfo data task to be resumed after fetchBlockchainInfo is invoked.")
     }
     
     func testFetchBlock() {
         let expectedRequestURL = URL(string: "https://api.eosnewyork.io/v1/chain/get_block")!
-        let mockDataTask = MockURLSessionDataTask()
-        urlSession.nextDataTask = mockDataTask
-        
-        XCTAssertFalse(mockDataTask.resumeWasCalled,
+
+        XCTAssertFalse(urlSession.nextDataTask.resumeWasCalled,
                        "Expected fetchBlock data task to not be resumed before fetchBlock is invoked.")
         apiClient.fetchBlock(id: "someID") { response in
         }
         
         XCTAssertEqual(expectedRequestURL, urlSession.lastURL,
                        "Expected fetchBlock request url to be \(expectedRequestURL.absoluteString)")
-        XCTAssertTrue(mockDataTask.resumeWasCalled,
+        XCTAssertTrue(urlSession.nextDataTask.resumeWasCalled,
                       "Expected fetchBlock data task to be resumed after fetchBlock is invoked.")
     }
     
