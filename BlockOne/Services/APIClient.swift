@@ -40,7 +40,7 @@ class APIClient: APIClientProtocol {
         sendRequest(urlRequest, completion: completion)
     }
     
-    private func sendRequest<T: Decodable>(_ urlRequest: URLRequest, completion: @escaping (APIResponse<T>) -> Void) {
+    private func sendRequest<T: Decodable & JSONRepresentable>(_ urlRequest: URLRequest, completion: @escaping (APIResponse<T>) -> Void) {
         let dataTask = urlSession.dataTask(with: urlRequest) { data, response, error in
             guard let data = data else {
                 let error = NSError(domain: "No data was received in data task", code: 0, userInfo: nil)
@@ -48,12 +48,13 @@ class APIClient: APIClientProtocol {
                 return
             }
             do {
-                let decodedObject: T = try self.decodeData(data)
+                var decodedObject: T = try self.decodeData(data)
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                decodedObject.json = json
                 completion(.success(result: decodedObject))
             } catch let error {
                 completion(.failure(error: error))
             }
-            
         }
         dataTask.resume()
     }

@@ -35,6 +35,7 @@
 		69457F9123167FCF009C8F27 /* BlockCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F9023167FCF009C8F27 /* BlockCellViewModelTest.swift */; };
 		69457F9323168337009C8F27 /* BlocksListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F9223168337009C8F27 /* BlocksListViewModelTest.swift */; };
 		69457F9523169E20009C8F27 /* BlockDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F9423169E20009C8F27 /* BlockDetailViewModelTest.swift */; };
+		69457F972316A50E009C8F27 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F962316A50E009C8F27 /* JSONRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		69457F9023167FCF009C8F27 /* BlockCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCellViewModelTest.swift; sourceTree = "<group>"; };
 		69457F9223168337009C8F27 /* BlocksListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksListViewModelTest.swift; sourceTree = "<group>"; };
 		69457F9423169E20009C8F27 /* BlockDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailViewModelTest.swift; sourceTree = "<group>"; };
+		69457F962316A50E009C8F27 /* JSONRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				69457F5D2316600C009C8F27 /* BlockchainInfoProtocol.swift */,
 				69457F5F23166015009C8F27 /* BlockProtocol.swift */,
 				69457F7423166A40009C8F27 /* BlocksProviderProtocol.swift */,
+				69457F962316A50E009C8F27 /* JSONRepresentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				69457F62231660D6009C8F27 /* APIClient.swift in Sources */,
 				69457F7C23166E76009C8F27 /* AsynchronousOperation.swift in Sources */,
 				69457F8723167401009C8F27 /* BlockDetailViewController.swift in Sources */,
+				69457F972316A50E009C8F27 /* JSONRepresentable.swift in Sources */,
 				69457F8B231676A2009C8F27 /* BlockDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

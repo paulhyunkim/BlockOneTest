@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct BlockchainInfo: BlockchainInfoProtocol, Decodable {
+struct BlockchainInfo: BlockchainInfoProtocol, Decodable, JSONRepresentable {
     
+    var json: Any?
     let headBlockID: String
     
     enum CodingKeys: String, CodingKey {
