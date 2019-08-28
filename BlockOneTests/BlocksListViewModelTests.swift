@@ -11,8 +11,8 @@ import XCTest
 
 class BlocksListViewModelTests: XCTestCase {
     
-    var blocks: [Block]!
-    var viewModel: BlocksListViewModel!
+    private var blocks: [Block]!
+    private var viewModel: BlocksListViewModel!
     
     override func setUp() {
         super.setUp()

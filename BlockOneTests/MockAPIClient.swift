@@ -32,7 +32,6 @@ class MockAPIClient: APIClientProtocol {
         completion(.success(result: block))
     }
     
-    
     private func buildBlockchainInfo() {
         let blockchainInfo = BlockchainInfo(headBlockID: "048d149364b2589f3d59ffd6b293aaf9d59bc1d16c23cb0da48ee18e370d19de")
         self.blockchainInfo = blockchainInfo

@@ -11,7 +11,7 @@ import XCTest
 
 class BlocksProviderTests: XCTestCase {
     
-    var blocksProvider: BlocksProvider!
+    private var blocksProvider: BlocksProvider!
     
     override func setUp() {
         super.setUp()
