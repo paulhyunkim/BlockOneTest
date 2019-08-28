@@ -19,9 +19,14 @@ class BlocksListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = BlocksListViewModel(blocks: [])
+        fetchMostRecentBlocks()
     }
 
     @IBAction func didTapRefreshButton(_ sender: Any) {
+        fetchMostRecentBlocks()
+    }
+    
+    private func fetchMostRecentBlocks() {
         blocksProvider.fetchMostRecentBlocks(count: 20) { [weak self] blocks in
             self?.viewModel = BlocksListViewModel(blocks: blocks)
             self?.updateContent()
