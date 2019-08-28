@@ -30,19 +30,23 @@ class BlockDetailViewModelTest: XCTestCase {
     }
     
     func testTextForProducerLabel() {
-        XCTFail()
+        XCTAssertEqual(viewModel.textForProducerLabel, block.producer,
+                       "Expected text for producerLabel to be the block's producer.")
     }
     
     func testTextForTransactionCountLabel() {
-        XCTFail()
+        XCTAssertEqual(viewModel.textForTransactionsCountLabel, "\(block.transactionsCount)",
+                       "Expected text for transactionsCountLabel to be the block's transactionCount.")
     }
     
     func testTextForSignatureLabel() {
-        XCTFail()
+        XCTAssertEqual(viewModel.textForSignatureLabel, block.producerSignature,
+                       "Expected text for signature label to be the block's producerSignature.")
     }
     
     func testTextForRawJSON() {
-        XCTFail()
+        XCTAssertEqual(viewModel.textForRawJSON, block.jsonString,
+                       "Expected text for rawJSON to be the block's jsonString.")
     }
     
     

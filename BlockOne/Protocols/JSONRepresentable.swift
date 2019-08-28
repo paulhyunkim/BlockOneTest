@@ -10,7 +10,7 @@ import Foundation
 
 protocol JSONRepresentable {
     
-    var json: Any? { get set }
+    var json: [String: Any]? { get set }
     var jsonString: String? { get }
     
 }

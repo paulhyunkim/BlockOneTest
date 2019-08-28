@@ -17,19 +17,19 @@ struct BlockDetailViewModel {
     }
     
     var textForProducerLabel: String {
-        return ""
+        return block.producer
     }
     
-    var textForTransactionCountLabel: String {
-        return ""
+    var textForTransactionsCountLabel: String {
+        return "\(block.transactionsCount)"
     }
     
     var textForSignatureLabel: String {
-        return ""
+        return block.producerSignature
     }
     
     var textForRawJSON: String {
-        return ""
+        return block.jsonString ?? ""
     }
     
     var isRawViewHidden: Bool {
@@ -37,7 +37,12 @@ struct BlockDetailViewModel {
     }
     
     func textForToggleButton(forViewState viewState: ViewState) -> String {
-        return ""
+        switch viewState {
+        case .pretty:
+            return "Show Raw JSON"
+        case .raw:
+            return "Hide Raw JSON"
+        }
     }
     
     enum ViewState {

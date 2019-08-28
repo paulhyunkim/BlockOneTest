@@ -49,7 +49,7 @@ class APIClient: APIClientProtocol {
             }
             do {
                 var decodedObject: T = try self.decodeData(data)
-                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
                 decodedObject.json = json
                 completion(.success(result: decodedObject))
             } catch let error {

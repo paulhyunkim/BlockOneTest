@@ -10,7 +10,7 @@ import Foundation
 
 struct BlockchainInfo: BlockchainInfoProtocol, Decodable, JSONRepresentable {
     
-    var json: Any?
+    var json: [String: Any]?
     let headBlockID: String
     
     enum CodingKeys: String, CodingKey {

@@ -21,13 +21,23 @@ class BlockDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateContent()
     }
     
     func setViewModel(viewModel: BlockDetailViewModel) {
         self.viewModel = viewModel
     }
 
+    private func updateContent() {
+        DispatchQueue.main.async {
+            self.producerLabel.text = self.viewModel?.textForProducerLabel
+            self.transactionCountLabel.text = self.viewModel?.textForTransactionsCountLabel
+            self.signatureLabel.text = self.viewModel?.textForSignatureLabel
+        }
+    }
+    
     @IBAction func didTapToggleViewStateButton(_ sender: Any) {
+        
     }
     
 }
