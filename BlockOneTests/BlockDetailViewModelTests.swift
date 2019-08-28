@@ -1,5 +1,5 @@
 //
-//  BlockDetailViewModelTest.swift
+//  BlockDetailViewModelTests.swift
 //  BlockOneTests
 //
 //  Created by Paul Kim on 8/28/19.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import BlockOne
 
-class BlockDetailViewModelTest: XCTestCase {
+class BlockDetailViewModelTests: XCTestCase {
     
     var block: Block!
     var viewModel: BlockDetailViewModel!

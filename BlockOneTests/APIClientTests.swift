@@ -1,5 +1,5 @@
 //
-//  APIClientTest.swift
+//  APIClientTests.swift
 //  BlockOneTests
 //
 //  Created by Paul Kim on 8/28/19.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import BlockOne
 
-class APIClientTest: XCTestCase {
+class APIClientTests: XCTestCase {
     
     var apiClient: APIClient!
     

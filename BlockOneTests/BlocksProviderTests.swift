@@ -1,5 +1,5 @@
 //
-//  BlocksProviderTest.swift
+//  BlocksProviderTests.swift
 //  BlockOneTests
 //
 //  Created by Paul Kim on 8/28/19.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import BlockOne
 
-class BlocksProviderTest: XCTestCase {
+class BlocksProviderTests: XCTestCase {
     
     var blocksProvider: BlocksProvider!
     

@@ -1,5 +1,5 @@
 //
-//  BlockCellViewModelTest.swift
+//  BlockCellViewModelTests.swift
 //  BlockOneTests
 //
 //  Created by Paul Kim on 8/28/19.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import BlockOne
 
-class BlockCellViewModelTest: XCTestCase {
+class BlockCellViewModelTests: XCTestCase {
     
     var block: Block!
     var viewModel: BlockCellViewModel!
