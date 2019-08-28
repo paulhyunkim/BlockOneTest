@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BlockDetailViewController.swift
 //  BlockOne
 //
 //  Created by Paul Kim on 8/28/19.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BlockDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
 }
-

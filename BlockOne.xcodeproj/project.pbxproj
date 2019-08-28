@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		69457F2D23165F12009C8F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F2C23165F12009C8F27 /* AppDelegate.swift */; };
-		69457F2F23165F12009C8F27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F2E23165F12009C8F27 /* ViewController.swift */; };
 		69457F3223165F12009C8F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69457F3023165F12009C8F27 /* Main.storyboard */; };
 		69457F3423165F14009C8F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69457F3323165F14009C8F27 /* Assets.xcassets */; };
 		69457F3723165F14009C8F27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69457F3523165F14009C8F27 /* LaunchScreen.storyboard */; };
@@ -27,6 +26,8 @@
 		69457F7C23166E76009C8F27 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7B23166E76009C8F27 /* AsynchronousOperation.swift */; };
 		69457F7E23166F68009C8F27 /* FetchBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7D23166F68009C8F27 /* FetchBlockOperation.swift */; };
 		69457F8023166FCC009C8F27 /* FetchBlockchainInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F7F23166FCC009C8F27 /* FetchBlockchainInfoOperation.swift */; };
+		69457F84231673EA009C8F27 /* BlocksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F83231673EA009C8F27 /* BlocksListViewController.swift */; };
+		69457F8723167401009C8F27 /* BlockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F8623167401009C8F27 /* BlockDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,6 @@
 /* Begin PBXFileReference section */
 		69457F2923165F12009C8F27 /* BlockOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69457F2C23165F12009C8F27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69457F2E23165F12009C8F27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		69457F3123165F12009C8F27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69457F3323165F14009C8F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69457F3623165F14009C8F27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +73,8 @@
 		69457F7B23166E76009C8F27 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		69457F7D23166F68009C8F27 /* FetchBlockOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBlockOperation.swift; sourceTree = "<group>"; };
 		69457F7F23166FCC009C8F27 /* FetchBlockchainInfoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBlockchainInfoOperation.swift; sourceTree = "<group>"; };
+		69457F83231673EA009C8F27 /* BlocksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksListViewController.swift; sourceTree = "<group>"; };
+		69457F8623167401009C8F27 /* BlockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +125,12 @@
 		69457F2B23165F12009C8F27 /* BlockOne */ = {
 			isa = PBXGroup;
 			children = (
+				69457F8123167330009C8F27 /* Scenes */,
 				69457F7A23166E63009C8F27 /* Operations */,
 				69457F6A2316694A009C8F27 /* Services */,
 				69457F65231661FD009C8F27 /* Models */,
 				69457F5A23165F7F009C8F27 /* Protocols */,
 				69457F2C23165F12009C8F27 /* AppDelegate.swift */,
-				69457F2E23165F12009C8F27 /* ViewController.swift */,
 				69457F3023165F12009C8F27 /* Main.storyboard */,
 				69457F3323165F14009C8F27 /* Assets.xcassets */,
 				69457F3523165F14009C8F27 /* LaunchScreen.storyboard */,
@@ -194,6 +196,31 @@
 				69457F7F23166FCC009C8F27 /* FetchBlockchainInfoOperation.swift */,
 			);
 			path = Operations;
+			sourceTree = "<group>";
+		};
+		69457F8123167330009C8F27 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				69457F82231673BC009C8F27 /* BlocksList */,
+				69457F85231673EF009C8F27 /* BlockDetail */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		69457F82231673BC009C8F27 /* BlocksList */ = {
+			isa = PBXGroup;
+			children = (
+				69457F83231673EA009C8F27 /* BlocksListViewController.swift */,
+			);
+			path = BlocksList;
+			sourceTree = "<group>";
+		};
+		69457F85231673EF009C8F27 /* BlockDetail */ = {
+			isa = PBXGroup;
+			children = (
+				69457F8623167401009C8F27 /* BlockDetailViewController.swift */,
+			);
+			path = BlockDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,12 +354,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69457F84231673EA009C8F27 /* BlocksListViewController.swift in Sources */,
 				69457F6023166015009C8F27 /* BlockProtocol.swift in Sources */,
 				69457F6923166240009C8F27 /* BlockchainInfo.swift in Sources */,
 				69457F6C23166959009C8F27 /* BlocksProvider.swift in Sources */,
 				69457F8023166FCC009C8F27 /* FetchBlockchainInfoOperation.swift in Sources */,
 				69457F6723166219009C8F27 /* Block.swift in Sources */,
-				69457F2F23165F12009C8F27 /* ViewController.swift in Sources */,
 				69457F2D23165F12009C8F27 /* AppDelegate.swift in Sources */,
 				69457F7E23166F68009C8F27 /* FetchBlockOperation.swift in Sources */,
 				69457F5C23165FD1009C8F27 /* APIClientProtocol.swift in Sources */,
@@ -340,6 +367,7 @@
 				69457F7523166A40009C8F27 /* BlocksProviderProtocol.swift in Sources */,
 				69457F62231660D6009C8F27 /* APIClient.swift in Sources */,
 				69457F7C23166E76009C8F27 /* AsynchronousOperation.swift in Sources */,
+				69457F8723167401009C8F27 /* BlockDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
