@@ -12,6 +12,7 @@ class BlocksListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     private let blocksProvider = BlocksProvider(apiClient: APIClient(urlSession: URLSession.shared))
     private var viewModel: BlocksListViewModel?
@@ -27,6 +28,7 @@ class BlocksListViewController: UIViewController {
     }
     
     private func fetchMostRecentBlocks() {
+        activityIndicatorView.startAnimating()
         blocksProvider.fetchMostRecentBlocks(count: 20) { [weak self] blocks in
             self?.viewModel = BlocksListViewModel(blocks: blocks)
             self?.updateContent()
@@ -35,6 +37,7 @@ class BlocksListViewController: UIViewController {
     
     private func updateContent() {
         DispatchQueue.main.async {
+            self.activityIndicatorView.stopAnimating()
             self.tableView.reloadData()
         }
     }

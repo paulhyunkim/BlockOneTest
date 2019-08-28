@@ -62,9 +62,22 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ddC-0A-poP"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zTe-gv-SiV">
+                                <rect key="frame" x="157" y="403" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Gy9-6I-N1b"/>
+                                    <constraint firstAttribute="width" constant="100" id="aYg-lS-3ad"/>
+                                </constraints>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNe-cU-ol3">
-                                <rect key="frame" x="184" y="794" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="117" y="794" width="180" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="lG9-UN-BFV"/>
+                                </constraints>
+                                <state key="normal" title="Refresh Recent Blocks">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapRefreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N1m-1S-F4O"/>
                                 </connections>
@@ -73,8 +86,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mmt-tJ-2sd" secondAttribute="trailing" id="1LI-kV-bjv"/>
+                            <constraint firstItem="zTe-gv-SiV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="63A-ou-TLh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wNe-cU-ol3" secondAttribute="bottom" constant="38" id="Gky-Ub-7Ed"/>
                             <constraint firstItem="mmt-tJ-2sd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PQd-ep-96R"/>
+                            <constraint firstItem="zTe-gv-SiV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Qf1-hS-hIx"/>
                             <constraint firstItem="wNe-cU-ol3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZoQ-mN-r0Z"/>
                             <constraint firstItem="wNe-cU-ol3" firstAttribute="top" secondItem="mmt-tJ-2sd" secondAttribute="bottom" constant="20" id="c90-c2-oYa"/>
                             <constraint firstItem="mmt-tJ-2sd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="i0g-l9-dPf"/>
@@ -82,6 +97,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="zTe-gv-SiV" id="6JU-9F-cZA"/>
                         <outlet property="refreshButton" destination="wNe-cU-ol3" id="Uy2-Yn-Xst"/>
                         <outlet property="tableView" destination="mmt-tJ-2sd" id="P97-kQ-Tg4"/>
                     </connections>
