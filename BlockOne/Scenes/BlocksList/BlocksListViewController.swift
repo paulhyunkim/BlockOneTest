@@ -10,8 +10,15 @@ import UIKit
 
 class BlocksListViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var refreshButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    @IBAction func didTapRefreshButton(_ sender: Any) {
+        
+    }
+    
 }

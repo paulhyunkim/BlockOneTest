@@ -15,5 +15,13 @@ struct BlocksListViewModel {
     init(blocks: [Block]) {
         self.blocks = blocks
     }
+    
+    var textForRefreshBlocksButton: String {
+        return ""
+    }
+    
+    func cellViewModel(for block: Block) -> BlockCellViewModel? {
+        return nil
+    }
 
 }
