@@ -42,6 +42,22 @@ class BlocksListViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "ShowBlockDetail":
+            guard let blockDetailViewController = segue.destination as? BlockDetailViewController,
+                let sendingCell = sender as? UITableViewCell,
+                let index = tableView.indexPath(for: sendingCell),
+                let block = viewModel?.block(forRow: index.row) else {
+                return
+            }
+            let viewModel = BlockDetailViewModel(block: block)
+            blockDetailViewController.setViewModel(viewModel: viewModel)
+        default:
+            return
+        }
+    }
+    
 }
 
 
@@ -63,3 +79,11 @@ extension BlocksListViewController: UITableViewDataSource {
     
 }
 
+extension BlocksListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = tableView.cellForRow(at: indexPath)
+        performSegue(withIdentifier: "ShowBlockDetail", sender: selectedCell)
+    }
+    
+}

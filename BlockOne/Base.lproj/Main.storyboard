@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eSs-Cp-xI1">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mmt-tJ-2sd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="730"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="686"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BlockCell" rowHeight="183" id="nz6-Pb-2Kv" customClass="BlockCell" customModule="BlockOne" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BlockCell" rowHeight="183" id="nz6-Pb-2Kv" customClass="BlockCell" customModule="BlockOne" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="183"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nz6-Pb-2Kv" id="y1y-vT-oGt">
@@ -63,7 +63,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zTe-gv-SiV">
-                                <rect key="frame" x="157" y="403" width="100" height="100"/>
+                                <rect key="frame" x="157" y="425" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Gy9-6I-N1b"/>
                                     <constraint firstAttribute="width" constant="100" id="aYg-lS-3ad"/>
@@ -96,15 +96,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ldc-zH-q27"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="zTe-gv-SiV" id="6JU-9F-cZA"/>
                         <outlet property="refreshButton" destination="wNe-cU-ol3" id="Uy2-Yn-Xst"/>
                         <outlet property="tableView" destination="mmt-tJ-2sd" id="P97-kQ-Tg4"/>
+                        <segue destination="QRH-RK-ooW" kind="show" identifier="ShowBlockDetail" id="3kn-bw-FIU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="104"/>
+            <point key="canvasLocation" x="713.04347826086962" y="103.79464285714285"/>
         </scene>
         <!--Block Detail View Controller-->
         <scene sceneID="bXb-1V-LKP">
@@ -119,7 +121,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBd-ww-A1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="104"/>
+            <point key="canvasLocation" x="1457.9710144927537" y="103.79464285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dhw-9J-hvd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eSs-Cp-xI1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IYB-OO-iRD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="knq-28-71u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCh-zW-rt5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197.10144927536234" y="103.79464285714285"/>
         </scene>
     </scenes>
 </document>

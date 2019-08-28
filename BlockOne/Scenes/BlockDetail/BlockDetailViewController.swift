@@ -9,9 +9,16 @@
 import UIKit
 
 class BlockDetailViewController: UIViewController {
+    
+    private var viewModel: BlockDetailViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func setViewModel(viewModel: BlockDetailViewModel) {
+        self.viewModel = viewModel
+    }
 
+    
 }

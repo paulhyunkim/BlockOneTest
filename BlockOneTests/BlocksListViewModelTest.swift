@@ -52,6 +52,21 @@ class BlocksListViewModelTest: XCTestCase {
         XCTAssertNil(viewModel.cellViewModel(forRow: outOfRangeIndex),
                      "Did not expect a view model when index is out of range.")
     }
+    
+    func testBlockForRow() {
+        guard blocks.count > 0 else {
+            XCTFail("Expected some mock data")
+            return
+        }
+        let lastBlockIndex = blocks.count - 1
+        let lastBlock = viewModel.block(forRow: lastBlockIndex)
+        XCTAssert(lastBlock?.id == blocks.last?.id,
+                  "Expected block with same ID for given index.")
+        
+        let outOfRangeIndex = -1
+        XCTAssertNil(viewModel.cellViewModel(forRow: outOfRangeIndex),
+                     "Did not expect a block when index is out of range.")
+    }
 
 }
 

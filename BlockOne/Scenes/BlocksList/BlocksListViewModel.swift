@@ -31,5 +31,12 @@ struct BlocksListViewModel {
         let block = blocks[rowIndex]
         return BlockCellViewModel(block: block)
     }
+    
+    func block(forRow rowIndex: Int) -> Block? {
+        guard rowIndex < blocks.count && rowIndex >= 0 else {
+            return nil
+        }
+        return blocks[rowIndex]
+    }
 
 }
