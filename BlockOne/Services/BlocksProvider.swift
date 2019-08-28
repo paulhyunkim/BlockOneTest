@@ -62,7 +62,7 @@ class BlocksProvider: BlocksProviderProtocol {
                     guard let previousID = operationToAdd?.block?.previous else {
                         return
                     }
-                    /* NOTE: Seems to have a problem here because `previous` is a string but `getBlock` on the rpcProvider takes a UInt64 blockNum */
+                    /* NOTE: Seems to have a problem here because `previous` is a string but `getBlock` on the rpcProvider takes a UInt64 blockNum! */
                     let blockNum = EosioUInt64.string(previousID)
                     nextOperation?.blockNum = blockNum.value
                     if let block = operationToAdd?.block {
