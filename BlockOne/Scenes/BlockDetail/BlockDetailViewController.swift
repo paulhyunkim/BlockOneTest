@@ -18,6 +18,7 @@ class BlockDetailViewController: UIViewController {
     @IBOutlet weak var transactionCountLabel: UILabel!
     @IBOutlet weak var signatureLabel: UILabel!
     @IBOutlet weak var toggleViewStateButton: UIButton!
+    @IBOutlet weak var rawJSONTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +34,18 @@ class BlockDetailViewController: UIViewController {
             self.producerLabel.text = self.viewModel?.textForProducerLabel
             self.transactionCountLabel.text = self.viewModel?.textForTransactionsCountLabel
             self.signatureLabel.text = self.viewModel?.textForSignatureLabel
+            self.rawJSONTextView.text = self.viewModel?.textForRawJSON
         }
     }
     
     @IBAction func didTapToggleViewStateButton(_ sender: Any) {
-        
+        let viewStateToShow: BlockDetailViewModel.ViewState = prettyView.isHidden == true ? .pretty : .raw
+        DispatchQueue.main.async {
+            self.prettyView.isHidden = self.viewModel?.isPrettyViewHidden(forViewState: viewStateToShow) ?? false
+            self.rawView.isHidden = self.viewModel?.isRawViewHidden(forViewState: viewStateToShow) ?? true
+            let toggleButtonTitle = self.viewModel?.textForToggleButton(forViewState: viewStateToShow)
+            self.toggleViewStateButton.setTitle(toggleButtonTitle, for: .normal)
+        }
     }
     
 }

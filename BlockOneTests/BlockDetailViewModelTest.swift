@@ -45,9 +45,34 @@ class BlockDetailViewModelTest: XCTestCase {
     }
     
     func testTextForRawJSON() {
+        /* Note: needs updating because the mock block doesn't have json */
         XCTAssertEqual(viewModel.textForRawJSON, block.jsonString,
                        "Expected text for rawJSON to be the block's jsonString.")
     }
+    
+    func testIsRawViewHidden() {
+        var viewState: BlockDetailViewModel.ViewState = .raw
+        XCTAssertFalse(viewModel.isRawViewHidden(forViewState: viewState))
+        viewState = .pretty
+        XCTAssertTrue(viewModel.isRawViewHidden(forViewState: viewState))
+    }
+    
+    func testIsPrettyViewHidden() {
+        var viewState: BlockDetailViewModel.ViewState = .pretty
+        XCTAssertFalse(viewModel.isPrettyViewHidden(forViewState: viewState))
+        viewState = .raw
+        XCTAssertTrue(viewModel.isPrettyViewHidden(forViewState: viewState))
+    }
+    
+    func testTextForToggleButton() {
+        var viewState: BlockDetailViewModel.ViewState = .pretty
+        XCTAssertEqual(viewModel.textForToggleButton(forViewState: viewState), "Show Raw JSON",
+                       "Expected text for rawJSON to be the block's jsonString.")
+        viewState = .raw
+        XCTAssertEqual(viewModel.textForToggleButton(forViewState: viewState), "Hide Raw JSON",
+                       "Expected text for rawJSON to be the block's jsonString.")
+    }
+    
     
     
 }

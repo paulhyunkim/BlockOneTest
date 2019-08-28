@@ -32,10 +32,19 @@ struct BlockDetailViewModel {
         return block.jsonString ?? ""
     }
     
-    var isRawViewHidden: Bool {
-        return false
+    func isRawViewHidden(forViewState viewState: ViewState) -> Bool {
+        switch viewState {
+        case .pretty:
+            return true
+        case .raw:
+            return false
+        }
     }
     
+    func isPrettyViewHidden(forViewState viewState: ViewState) -> Bool {
+        return !isRawViewHidden(forViewState: viewState)
+    }
+
     func textForToggleButton(forViewState viewState: ViewState) -> String {
         switch viewState {
         case .pretty:
