@@ -16,4 +16,33 @@ struct BlockDetailViewModel {
         self.block = block
     }
     
+    var textForProducerLabel: String {
+        return ""
+    }
+    
+    var textForTransactionCountLabel: String {
+        return ""
+    }
+    
+    var textForSignatureLabel: String {
+        return ""
+    }
+    
+    var textForRawJSON: String {
+        return ""
+    }
+    
+    var isRawViewHidden: Bool {
+        return false
+    }
+    
+    func textForToggleButton(forViewState viewState: ViewState) -> String {
+        return ""
+    }
+    
+    enum ViewState {
+        case pretty
+        case raw
+    }
+    
 }
