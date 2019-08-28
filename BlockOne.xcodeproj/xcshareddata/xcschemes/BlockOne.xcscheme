@@ -26,7 +26,24 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "69457F3C23165F14009C8F27"
+            BuildableName = "BlockOneTests.xctest"
+            BlueprintName = "BlockOneTests"
+            ReferencedContainer = "container:BlockOne.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "69457F2823165F12009C8F27"
+            BuildableName = "BlockOne.app"
+            BlueprintName = "BlockOne"
+            ReferencedContainer = "container:BlockOne.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">

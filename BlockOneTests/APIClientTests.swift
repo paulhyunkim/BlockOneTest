@@ -11,46 +11,51 @@ import XCTest
 
 class APIClientTests: XCTestCase {
     
+    var urlSession: MockURLSession!
     var apiClient: APIClient!
     
     override func setUp() {
         super.setUp()
-        // Note: need to replace with mock session
-        apiClient = APIClient(urlSession: URLSession.shared)
+        urlSession = MockURLSession()
+        apiClient = APIClient(urlSession: urlSession)
     }
     
     override func tearDown() {
         apiClient = nil
+        urlSession = nil
         super.tearDown()
     }
     
-    func testFetchBlockchainInfoSuccess() {
-        let expectation = self.expectation(description: "Status code: 200")
+    func testFetchBlockchainInfo() {
+        let expectedRequestURL = URL(string: "https://api.eosnewyork.io/v1/chain/get_info")!
+        let mockDataTask = MockURLSessionDataTask()
+        urlSession.nextDataTask = mockDataTask
+        
+        XCTAssertFalse(mockDataTask.resumeWasCalled,
+                       "Expected fetchBlockchainInfo data task to not be resumed before fetchBlockchainInfo is invoked.")
         apiClient.fetchBlockchainInfo { response in
-            switch response {
-            case .success:
-                expectation.fulfill()
-            case .failure:
-                XCTFail("Expected successful blockchainInfo fetch")
-                expectation.fulfill()
-            }
         }
-        wait(for: [expectation], timeout: 5)
+        
+        XCTAssertEqual(expectedRequestURL, urlSession.lastURL,
+                       "Expected fetchBlockchainInfo request url to be \(expectedRequestURL.absoluteString)")
+        XCTAssertTrue(mockDataTask.resumeWasCalled,
+                      "Expected fetchBlockchainInfo data task to be resumed after fetchBlockchainInfo is invoked.")
     }
     
-    func testFetchBlockSuccess() {
-        let blockID = "048013e1a30e82641fd1f6413eb1af0d1b72274e81564f7ef85c4b29d9d3271d"
-        let expectation = self.expectation(description: "Status code: 200")
-        apiClient.fetchBlock(id: blockID) { response in
-            switch response {
-            case .success:
-                expectation.fulfill()
-            case .failure:
-                XCTFail("Expected successful block fetch")
-                expectation.fulfill()
-            }
+    func testFetchBlock() {
+        let expectedRequestURL = URL(string: "https://api.eosnewyork.io/v1/chain/get_block")!
+        let mockDataTask = MockURLSessionDataTask()
+        urlSession.nextDataTask = mockDataTask
+        
+        XCTAssertFalse(mockDataTask.resumeWasCalled,
+                       "Expected fetchBlock data task to not be resumed before fetchBlock is invoked.")
+        apiClient.fetchBlock(id: "someID") { response in
         }
-        wait(for: [expectation], timeout: 5)
+        
+        XCTAssertEqual(expectedRequestURL, urlSession.lastURL,
+                       "Expected fetchBlock request url to be \(expectedRequestURL.absoluteString)")
+        XCTAssertTrue(mockDataTask.resumeWasCalled,
+                      "Expected fetchBlock data task to be resumed after fetchBlock is invoked.")
     }
     
 }

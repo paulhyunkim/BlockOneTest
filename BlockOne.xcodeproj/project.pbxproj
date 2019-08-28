@@ -37,6 +37,8 @@
 		69457F9523169E20009C8F27 /* BlockDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F9423169E20009C8F27 /* BlockDetailViewModelTests.swift */; };
 		69457F972316A50E009C8F27 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F962316A50E009C8F27 /* JSONRepresentable.swift */; };
 		69457F992316CE40009C8F27 /* BlocksListViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F982316CE40009C8F27 /* BlocksListViewUITests.swift */; };
+		69457F9B2316E7D7009C8F27 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F9A2316E7D7009C8F27 /* MockURLSession.swift */; };
+		69457F9D2316E8E0009C8F27 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457F9C2316E8E0009C8F27 /* MockURLSessionDataTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		69457F9423169E20009C8F27 /* BlockDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailViewModelTests.swift; sourceTree = "<group>"; };
 		69457F962316A50E009C8F27 /* JSONRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRepresentable.swift; sourceTree = "<group>"; };
 		69457F982316CE40009C8F27 /* BlocksListViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksListViewUITests.swift; sourceTree = "<group>"; };
+		69457F9A2316E7D7009C8F27 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		69457F9C2316E8E0009C8F27 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,10 +167,12 @@
 				69457F4323165F14009C8F27 /* Info.plist */,
 				69457F6323166138009C8F27 /* APIClientTests.swift */,
 				69457F7623166AAE009C8F27 /* BlocksProviderTests.swift */,
-				69457F7823166BF1009C8F27 /* MockAPIClient.swift */,
 				69457F9023167FCF009C8F27 /* BlockCellViewModelTests.swift */,
 				69457F9223168337009C8F27 /* BlocksListViewModelTests.swift */,
 				69457F9423169E20009C8F27 /* BlockDetailViewModelTests.swift */,
+				69457F7823166BF1009C8F27 /* MockAPIClient.swift */,
+				69457F9A2316E7D7009C8F27 /* MockURLSession.swift */,
+				69457F9C2316E8E0009C8F27 /* MockURLSessionDataTask.swift */,
 			);
 			path = BlockOneTests;
 			sourceTree = "<group>";
@@ -411,6 +417,8 @@
 				69457F7723166AAE009C8F27 /* BlocksProviderTests.swift in Sources */,
 				69457F6423166138009C8F27 /* APIClientTests.swift in Sources */,
 				69457F9523169E20009C8F27 /* BlockDetailViewModelTests.swift in Sources */,
+				69457F9B2316E7D7009C8F27 /* MockURLSession.swift in Sources */,
+				69457F9D2316E8E0009C8F27 /* MockURLSessionDataTask.swift in Sources */,
 				69457F9123167FCF009C8F27 /* BlockCellViewModelTests.swift in Sources */,
 				69457F7923166BF1009C8F27 /* MockAPIClient.swift in Sources */,
 			);
